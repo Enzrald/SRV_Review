@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="jumbotron text-center">
+        <h2>Employee List</h2>
+    </div>
+
+    <div class="container-fluid text-center" style="margin-bottom: 25px;">
+      <form class="form" action="/add" method="get">
+        <button class="btn btn-default" type="submit">Add</button>
+      </form>
+    </div>
+
+    <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Image</th>
+        <th>Average Score</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each emps}}
+      <tr>
+        <td>{{this.empID}}</td>
+        <td>{{this.empName}}</td>
+        <td>{{this.empImg}}</td>
+        <td>{{this.empAvgScr}}</td>
+        <td>
+            <form action="/detail/{{this._id}}" method="get">
+                <button type="submit" class="btn btn-info">Details</button>
+            </form>
+        </td>
+        <td>
+            <form action="/edit/{{this._id}}" method="get">
+                <button type="submit" class="btn btn-warning">Edit</button>
+            </form>
+        </td>
+        <td>
+            <form action="/delete/{{this._id}}" method="post">
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>

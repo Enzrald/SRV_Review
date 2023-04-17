@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="jumbotron text-center">
+    <h2>Edit</h2>
+  </div>
+  <form class="form-horizontal" action="/edit/{{emp._id}}" method="post">
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="text">ID:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="text" placeholder="Enter ID" name="empID" required value="{{emp.empID}}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="name">Name:</label>
+      <div class="col-sm-10">          
+        <input type="text" class="form-control" id="name" placeholder="Enter name" name="empName" required value="{{emp.empName}}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="img">Img:</label>
+      <div class="col-sm-10">          
+        <input type="text" class="form-control" id="img" placeholder="Enter image link" name="empImg" required value="{{emp.empImg}}">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="avgs">Average Score:</label>
+      <div class="col-sm-10">          
+        <input type="number" class="form-control" id="avgs" placeholder="Enter average score" name="empAvgScr" min="0" max="10" required value="{{emp.empAvgScr}}">
+      </div>
+    </div>
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default">Update</button>
+      </div>
+    </div>
+  </form>
+</div>
